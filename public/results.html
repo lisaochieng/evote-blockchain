@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results | E-vote</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Ethers.js - Same version as dashboard -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="results-nav">
+        <div class="nav-container">
+            <a href="dashboard.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Back to Dashboard
+            </a>
+            <div class="nav-logo">
+                <span class="logo-icon">🗳️</span>
+                <span class="logo-text">E-vote Results</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="results-hero">
+        <div class="hero-container">
+            <div class="hero-label">Live Results</div>
+            <h1 class="hero-title" id="electionTitle">Loading Election...</h1>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-value" id="totalVotesCount">0</div>
+                    <div class="stat-label">Total Votes Cast</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-value" id="candidatesCount">0</div>
+                    <div class="stat-label">Candidates</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-value" id="electionStatus">Active</div>
+                    <div class="stat-label">Status</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Results -->
+    <main class="results-main">
+        <div class="results-container">
+            
+            <!-- Loading State -->
+            <div class="loading-results" id="loadingResults">
+                <div class="spinner-xl"></div>
+                <p>Loading election results...</p>
+            </div>
+
+            <!-- Results Grid -->
+            <div class="results-grid hidden" id="resultsGrid">
+                
+                <!-- Winner Card -->
+                <div class="winner-section">
+                    <div class="winner-card" id="winnerCard">
+                        <div class="winner-badge">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                            Leading
+                        </div>
+                        <div class="winner-name" id="winnerName">-</div>
+                        <div class="winner-votes">
+                            <span class="votes-count" id="winnerVotes">0</span> votes
+                            <span class="votes-percent" id="winnerPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <!-- Bar Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Vote Distribution</h3>
+                            <div class="chart-legend">
+                                <span class="legend-item">
+                                    <span class="legend-dot"></span>
+                                    Votes Cast
+                                </span>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Pie Chart -->
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Vote Percentage</h3>
+                            <div class="chart-legend" id="pieChartLegend">
+                                <!-- Dynamic legend -->
+                            </div>
+                        </div>
+                        <div class="chart-container chart-container-pie">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Results Table -->
+                <div class="table-section">
+                    <div class="table-header">
+                        <h3>Detailed Results</h3>
+                        <button class="btn-export" onclick="exportResults()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Export CSV
+                        </button>
+                    </div>
+                    <div class="results-table-container">
+                        <table class="results-table" id="resultsTable">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Candidate</th>
+                                    <th>Votes</th>
+                                    <th>Percentage</th>
+                                    <th>Visual</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Election Info -->
+                <div class="info-section">
+                    <div class="info-card">
+                        <h4>Election Information</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">Start Date</div>
+                                <div class="info-value" id="startDate">-</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">End Date</div>
+                                <div class="info-value" id="endDate">-</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Contract Address</div>
+                                <div class="info-value info-value-mono" id="contractAddress">-</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Election ID</div>
+                                <div class="info-value" id="electionId">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Error State -->
+            <div class="error-state hidden" id="errorState">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3>Failed to Load Results</h3>
+                <p>Could not load election results. Please try again.</p>
+                <button class="btn-retry" onclick="window.location.reload()">Retry</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/contract-abi.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

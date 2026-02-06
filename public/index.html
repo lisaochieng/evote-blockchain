@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-vote | Blockchain Voting Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">E-vote</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="register.html" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Powered by Ethereum Blockchain
+            </div>
+            <h1 class="hero-title">
+                The Future of
+                <span class="gradient-text">Democratic Voting</span>
+            </h1>
+            <p class="hero-subtitle">
+                Secure, transparent, and tamper-proof voting powered by blockchain technology.
+                <br>Your voice matters. Your vote is protected.
+            </p>
+            <div class="hero-buttons">
+                <a href="register.html" class="btn-hero btn-primary">
+                    <span>Start Voting</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#how-it-works" class="btn-hero btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Learn More</span>
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Transparent</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">🔒</div>
+                    <div class="stat-label">Secure</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Immutable</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual - Enhanced Blockchain Grid -->
+        <div class="hero-visual">
+            <div class="blockchain-container">
+                <!-- Connection lines SVG -->
+                <svg class="blockchain-connections" viewBox="0 0 400 400">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0" />
+                            <stop offset="50%" style="stop-color:#00ff88;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Horizontal lines -->
+                    <line class="connection-line h-line-1" x1="95" y1="67" x2="145" y2="67"/>
+                    <line class="connection-line h-line-2" x1="255" y1="67" x2="305" y2="67"/>
+                    <line class="connection-line h-line-3" x1="95" y1="200" x2="145" y2="200"/>
+                    <line class="connection-line h-line-4" x1="255" y1="200" x2="305" y2="200"/>
+                    <line class="connection-line h-line-5" x1="95" y1="333" x2="145" y2="333"/>
+                    <line class="connection-line h-line-6" x1="255" y1="333" x2="305" y2="333"/>
+                    <!-- Vertical lines -->
+                    <line class="connection-line v-line-1" x1="67" y1="95" x2="67" y2="145"/>
+                    <line class="connection-line v-line-2" x1="200" y1="95" x2="200" y2="145"/>
+                    <line class="connection-line v-line-3" x1="333" y1="95" x2="333" y2="145"/>
+                    <line class="connection-line v-line-4" x1="67" y1="255" x2="67" y2="305"/>
+                    <line class="connection-line v-line-5" x1="200" y1="255" x2="200" y2="305"/>
+                    <line class="connection-line v-line-6" x1="333" y1="255" x2="333" y2="305"/>
+                </svg>
+                
+                <div class="blockchain-grid">
+                    <!-- Block 1 -->
+                    <div class="grid-block" data-block="1">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#1</span>
+                                <span class="block-status confirmed">✓</span>
+                            </div>
+                            <div class="block-icon">⬡</div>
+                            <div class="block-hash">0x7a9f...3b2c</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 2 -->
+                    <div class="grid-block" data-block="2">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#2</span>
+                                <span class="block-status confirmed">✓</span>
+                            </div>
+                            <div class="block-icon">⬡</div>
+                            <div class="block-hash">0x3e5d...8f1a</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 3 -->
+                    <div class="grid-block" data-block="3">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#3</span>
+                                <span class="block-status confirmed">✓</span>
+                            </div>
+                            <div class="block-icon">⬡</div>
+                            <div class="block-hash">0xb4c2...9d7e</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 4 -->
+                    <div class="grid-block" data-block="4">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#4</span>
+                                <span class="block-status confirmed">✓</span>
+                            </div>
+                            <div class="block-icon">⬡</div>
+                            <div class="block-hash">0x1f8a...4c5b</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 5 - Center (Active/Mining) -->
+                    <div class="grid-block active-block" data-block="5">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#5</span>
+                                <span class="block-status mining">⟳</span>
+                            </div>
+                            <div class="block-icon spinning">⬡</div>
+                            <div class="block-hash typing">0x9c3d...2e8f</div>
+                            
+                        </div>
+                        <div class="block-pulse active"></div>
+                        <div class="mining-ring"></div>
+                    </div>
+
+                    <!-- Block 6 -->
+                    <div class="grid-block" data-block="6">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#6</span>
+                                <span class="block-status pending">○</span>
+                            </div>
+                            <div class="block-icon dim">⬡</div>
+                            <div class="block-hash">pending...</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 7 -->
+                    <div class="grid-block" data-block="7">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#7</span>
+                                <span class="block-status pending">○</span>
+                            </div>
+                            <div class="block-icon dim">⬡</div>
+                            <div class="block-hash">pending...</div>
+                            
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 8 -->
+                    <div class="grid-block" data-block="8">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#8</span>
+                                <span class="block-status pending">○</span>
+                            </div>
+                            <div class="block-icon dim">⬡</div>
+                            <div class="block-hash">pending...</div>
+                            <div class="block-votes">
+                                <span class="vote-icon">🗳️</span>
+                                <span class="vote-count">--</span>
+                            </div>
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+
+                    <!-- Block 9 -->
+                    <div class="grid-block" data-block="9">
+                        <div class="block-glow"></div>
+                        <div class="block-content">
+                            <div class="block-header">
+                                <span class="block-number">#9</span>
+                                <span class="block-status pending">○</span>
+                            </div>
+                            <div class="block-icon dim">⬡</div>
+                            <div class="block-hash">pending...</div>
+                            <div class="block-votes">
+                                <span class="vote-icon">🗳️</span>
+                                <span class="vote-count">--</span>
+                            </div>
+                        </div>
+                        <div class="block-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- Live transaction feed -->
+                <div class="live-feed">
+                    <div class="feed-header">
+                        <span class="feed-dot"></span>
+                        <span>Live Transactions</span>
+                    </div>
+                    <div class="feed-items" id="liveFeed">
+                        <div class="feed-item">
+                            <span class="feed-hash">0x7a9f...3b2c</span>
+                            <span class="feed-action">Vote Cast</span>
+                            <span class="feed-time">2s ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <div class="section-badge">Why E-vote</div>
+            <h2 class="section-title">Built on Trust, Powered by Technology</h2>
+            <p class="section-subtitle">Every vote is a transaction. Every election is transparent.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 5L25 15L35 16.5L27.5 24L29.5 35L20 29.5L10.5 35L12.5 24L5 16.5L15 15L20 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Blockchain Security</h3>
+                <p class="feature-description">
+                    Every vote is encrypted and recorded on the Ethereum blockchain, making it impossible to tamper with or delete.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="5" y="5" width="30" height="30" rx="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M15 20L18 23L25 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">One Person, One Vote</h3>
+                <p class="feature-description">
+                    Smart contracts ensure each wallet address can only vote once per election, eliminating fraud.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 10V20L26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Real-Time Results</h3>
+                <p class="feature-description">
+                    Watch results update instantly as votes are cast. Complete transparency from start to finish.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 15V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="20" cy="25" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Anonymous & Private</h3>
+                <p class="feature-description">
+                    Your vote is linked to your wallet, not your identity. Vote with confidence and privacy.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="8" y="12" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 18H32" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">MetaMask Integration</h3>
+                <p class="feature-description">
+                    Connect your wallet in seconds. No complex setup, just secure authentication.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M35 10L15 30L5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Verifiable Audit Trail</h3>
+                <p class="feature-description">
+                    Every transaction is publicly verifiable on the blockchain. Trust through transparency.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-header">
+            <div class="section-badge">Simple Process</div>
+            <h2 class="section-title">How E-vote Works</h2>
+            <p class="section-subtitle">Three simple steps to secure, democratic voting</p>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3 class="step-title">Register & Connect</h3>
+                    <p class="step-description">
+                        Create your account and connect your MetaMask wallet. Your wallet address becomes your voting credential.
+                    </p>
+                </div>
+                <div class="step-line"></div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3 class="step-title">Browse Elections</h3>
+                    <p class="step-description">
+                        View active elections, read candidate information, and make informed decisions.
+                    </p>
+                </div>
+                <div class="step-line"></div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3 class="step-title">Cast Your Vote</h3>
+                    <p class="step-description">
+                        Submit your vote through a blockchain transaction. It's recorded permanently and counted instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Make Your Voice Heard?</h2>
+            <p class="cta-subtitle">Join the future of democratic voting today</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn-hero btn-primary">
+                    <span>Create Account</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="login.html" class="btn-hero btn-secondary">
+                    <span>Sign In</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <span class="logo-icon">⬡</span>
+                    <span class="logo-text">E-vote</span>
+                </div>
+                <p class="footer-description">
+                    Secure, transparent, blockchain-powered voting for the digital age.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Platform</h4>
+                <a href="#" class="footer-link">Features</a>
+                <a href="#" class="footer-link">Security</a>
+                <a href="#" class="footer-link">Documentation</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Support</h4>
+                <a href="#" class="footer-link">Help Center</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">FAQs</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Legal</h4>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Audit Reports</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-vote. All rights reserved. Built on Ethereum.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
